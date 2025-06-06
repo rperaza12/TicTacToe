@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class TicTacToe {
+public class MainClass {
 
-    private static char[][] board = new char[3][3];
-    private static char currentPlayer = 'X'; 
+    public static char[][] board = new char[3][3];
+    public static char currentPlayer = 'X'; 
     
 
     public static void main(String[] args) {
@@ -44,14 +44,13 @@ public class TicTacToe {
         int row, col;
         while (true) {
             System.out.println("Player " + currentPlayer + "'s turn.");
-    
             // Validate row input
             while (true) {
                 System.out.print("Choose row (0-2): ");
                 if (keyboard.hasNextInt()) {
                     row = keyboard.nextInt();
                     if (row >= 0 && row < 3) {
-                        break; // Valid row, exit loop
+                        break;
                     }
                 } else {
                     keyboard.next(); // Clear invalid input
@@ -73,13 +72,14 @@ public class TicTacToe {
                 System.out.println("Invalid column! Must be between 0 and 2.");
             }
     
-            // Check if the chosen position is available
+            // Board Checks availability to place the move
             if (board[row][col] == ' ') {
                 board[row][col] = currentPlayer;
-                break; // Valid move, exit loop
+                break; 
             } else {
                 System.out.println("That spot is already taken! Try again.");
             }
+            // End
         }
     }
     
