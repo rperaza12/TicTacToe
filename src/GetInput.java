@@ -36,7 +36,6 @@ public class GetInput {
             }
             // Board Checks availability to place the move
             if (board[row][col] == ' ') {
-                /*board[row][col] = currentPlayer;*/
                 break; 
             } else {
                 System.out.println("That spot is already taken! Try again.");
