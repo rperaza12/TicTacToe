@@ -45,19 +45,4 @@ public class GetInput {
         return new PlayerMove(row, col, currentPlayer);
         
     }
-
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        char currentPlayer = 'X';
-       char[][] boardtest = new char[3][3];
-       for (int r = 0; r < 3; r++) {
-        for (int c = 0; c < 3; c++) {
-            boardtest[r][c] = ' ';
-        }
-       }
-       
-       PlayerMove move = getInput(keyboard, boardtest, currentPlayer);
-       System.out.println(move);
-       
-    }
 }
